@@ -22,4 +22,33 @@ MonoBehaviour:
     walkspd: 10
     atkScale: 10
     bdrain: 2
-    weapown: 
+    weapown: sda
+    shiled: sda
+    exp: 1
+    lv: 1
+  - chName: 1
+    hp: 1000
+    atk: 10
+    def: 50
+    bdef: 30
+    atkspd: 1
+    walkspd: 10
+    atkScale: 10
+    bdrain: 2
+    weapown: sda
+    shiled: sda
+    exp: 1
+    lv: 1
+  - chName: 1
+    hp: 1000
+    atk: 10
+    def: 50
+    bdef: 30
+    atkspd: 1
+    walkspd: 10
+    atkScale: 10
+    bdrain: 2
+    weapown: sda
+    shiled: sda
+    exp: 1
+    lv: 1

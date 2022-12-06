@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: WepownSOArr
   m_EditorClassIdentifier: 
   wepownStats:
-  - Wname: 
+  - Wname: ds
+    ID: sda
     hp: 0
     atk: 0
     def: 0

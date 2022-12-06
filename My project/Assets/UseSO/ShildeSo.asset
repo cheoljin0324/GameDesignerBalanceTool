@@ -12,4 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbb22a1dbaccf64ca6c106ee7da7015, type: 3}
   m_Name: ShildeSo
   m_EditorClassIdentifier: 
-  shildSOs: []
+  shildSOs:
+  - name: 23
+    ID: ga
+    hp: 0
+    atk: 0
+    def: 0
+    bdef: 0
+    aktspd: 0
+    spd: 0
+    atkRange: 0
+    Range: 0
+    blode: 0
