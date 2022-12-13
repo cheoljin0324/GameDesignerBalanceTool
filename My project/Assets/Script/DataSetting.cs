@@ -6,6 +6,13 @@ using UnityEngine.UI;
 public class DataSetting : MonoBehaviour
 {
     public CharacterMemory soBase;
+    public ShildSo shildSO;
+    public WeapownSetting wSetting;
+
+    wepownStats useWeapown;
+    ShildDataSO shildDataSO;
+
+
     CharacterButtonSet cbtset;
 
     [Header("이름")]
@@ -131,6 +138,24 @@ public class DataSetting : MonoBehaviour
 
     public void useData(string chName, float hp, int atk, int def, int bdef, float atkspd, float walkspd, float atkScale, float bdrain, string weapown, string shiled, float exp, int lv)
     {
+
+        for(int i = 0; i<wSetting.wepownStats.Count; i++)
+        {
+            if(weapown == wSetting.wepownStats[i].ID)
+            {
+                useWeapown = wSetting.wepownStats[i];
+                Debug.Log(useWeapown.atk);
+            }
+        }
+
+        for(int i = 0; i<shildSO.shildSOs.Count; i++)
+        {
+            if(shiled == shildSO.shildSOs[i].ID)
+            {
+                shildDataSO = shildSO.shildSOs[i];
+            }
+        }
+
         this.chName.text = chName;
         this.hp.text = hp.ToString();
         this.atk.text = atk.ToString();
@@ -145,14 +170,14 @@ public class DataSetting : MonoBehaviour
         this.exp.text = exp.ToString();
         this.lv.text = lv.ToString();
         TName.text = "이름 :" + chName;
-        Thp.text = "체력 :" + hp.ToString();
-        Tatk.text = "ATK :" + atk.ToString();
-        Tdef.text = "DEF :" + def.ToString();
-        Tbdef.text = "B-DEF :" + bdef.ToString();
-        Tatkspd.text = "ATK_SPD :" + atkspd.ToString()+"%";
-        TwalkSpd.text = "SPD :" + walkSpd.ToString() + "%";
-        TatkRange.text = "ATK_RANGE :" + atkRange.ToString() + "%";
-        Tblod.text = "BLD :" + blod.ToString() + "%";
+        Thp.text = "체력 :" + (shildDataSO.hp+useWeapown.hp+hp).ToString();
+        Tatk.text = "ATK :" + (shildDataSO.atk + useWeapown.atk + atk).ToString();
+        Tdef.text = "DEF :" + (shildDataSO.def + useWeapown.def + def).ToString();
+        Tbdef.text = "B-DEF :" + (shildDataSO.bdef + useWeapown.bdef + bdef).ToString();
+        Tatkspd.text = "ATK_SPD :" + (shildDataSO.aktspd + useWeapown.atkTime+atkspd).ToString()+"%";
+        TwalkSpd.text = "SPD :" + (shildDataSO.spd + useWeapown.spd+walkspd).ToString();
+        TatkRange.text = "ATK_RANGE :" + (shildDataSO.atkRange + useWeapown.atkRange+atkScale).ToString() + "%";
+        Tblod.text = "BLD :" + (shildDataSO.blode + useWeapown.blode+bdrain).ToString() + "%";
         Tweapown.text = "WEP :" + weapown;
         Tshiled.text = "SHD :" + shiled;
         Texp.text = "EXP :" + exp.ToString();

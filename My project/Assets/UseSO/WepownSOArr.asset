@@ -25,4 +25,17 @@ MonoBehaviour:
     Range: 0
     blode: 0
     atkTime: 0
-    categori: 0
+    categori: 1
+  - Wname: dcz
+    ID: dsz
+    hp: 0
+    atk: 10
+    def: 0
+    bdef: 0
+    aktspd: 0
+    spd: 0
+    atkRange: 0
+    Range: 0
+    blode: 0
+    atkTime: 0
+    categori: 1

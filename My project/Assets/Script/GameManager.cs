@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
 
     List<string> New = new List<string>();
+    public bool isTestRoom;
 
     // Start is called before the first frame update
     void Start()
