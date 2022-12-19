@@ -17,6 +17,9 @@ public class TestManager : MonoBehaviour
     [SerializeField]
     GameObject profilePrefab;
 
+    public List<Simulator> useEnemy;
+    public Simulator usePlayer;
+
     public Text tName;
     public Text tHp;
     public Text tAtk;
@@ -37,13 +40,13 @@ public class TestManager : MonoBehaviour
         {
             if (Player.chName == "")
             {
-                Player = chmemory.chList[set];
+                Player = chmemory.chList[set-1];
                 UpdatePlayer();
             }
             else
             {
-                setList.Add(chmemory.chList[set]);
-                UpdateEnemy();
+                setList.Add(chmemory.chList[set-1]);
+                UpdateEnemy(set);
             }
         }
     }
@@ -83,6 +86,16 @@ public class TestManager : MonoBehaviour
         tShield.text = "WEP :" + Player.shiled;
         tExp.text = "EXP :" + Player.exp.ToString();
         tLv.text = "LV :" + Player.lv.ToString();
+
+        usePlayer.useStats.chName = Player.chName;
+        usePlayer.useStats.hp = (Player.hp + nowWeapown.hp + shieldData.hp);
+        usePlayer.useStats.atk = (Player.atk + nowWeapown.atk + shieldData.atk);
+        usePlayer.useStats.def = (Player.def + nowWeapown.def + shieldData.def);
+        usePlayer.useStats.bdef = (Player.bdef + nowWeapown.bdef + shieldData.bdef);
+        usePlayer.useStats.atkspd = (Player.atkspd + nowWeapown.atkTime + shieldData.aktspd);
+        usePlayer.useStats.walkspd = (Player.walkspd + nowWeapown.spd + shieldData.spd);
+        usePlayer.useStats.atkScale = (Player.atkScale + nowWeapown.atkRange + shieldData.atkRange);
+        usePlayer.useStats.bdrain = (Player.bdrain + nowWeapown.blode + shieldData.blode);
     }
 
     public void CLSPlayer()
@@ -91,11 +104,15 @@ public class TestManager : MonoBehaviour
 
     }
 
-    public void UpdateEnemy()
+    public void UpdateEnemy(int useIndex)
     {
         GameObject set = Instantiate(profilePrefab);
         set.transform.parent = setContent.transform;
-        set.GetComponentInChildren<Text>().text = setList[setList.Count].chName;
+        set.transform.position = Vector3.zero;
+        set.transform.localScale = new Vector3(1, 1, 1);
+        set.AddComponent<Simulator>().useStats = GetComponent<DataSetting>().soBase.chList[useIndex];
+        set.GetComponentInChildren<Text>().text = setList[setList.Count-1].chName;
+        useEnemy.Add(set.GetComponent<Simulator>());
     }
 
     public void CLSEnemy()
@@ -106,4 +123,14 @@ public class TestManager : MonoBehaviour
             Destroy(setContent.GetComponentsInChildren<Transform>()[i].gameObject);
         }
     }
+
+    public void RoomIN()
+    {
+        for(int i = 0; i<useEnemy.Count; i++)
+        {
+            usePlayer.Target.Add(useEnemy[i]);
+            useEnemy[i].Target[0] = usePlayer;
+        }
+    }
+
 }

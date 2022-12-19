@@ -2506,7 +2506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &476139317
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5395,6 +5395,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTestRoom: 0
+  buttonIndex: 0
+  useSimulatorText: {fileID: 4894670116826938401, guid: c475b410bb6a0f24db1536abb2a64468, type: 3}
+  scrollContentSimul: {fileID: 0}
 --- !u!4 &1060457274
 Transform:
   m_ObjectHideFlags: 0
@@ -5542,6 +5545,8 @@ MonoBehaviour:
   setList: []
   setContent: {fileID: 2110710325}
   profilePrefab: {fileID: 8144283321246026788, guid: c4bdced27a7ad3c4f9c2a0275d7e99b1, type: 3}
+  useEnemy: []
+  usePlayer: {fileID: 0}
   tName: {fileID: 567458028}
   tHp: {fileID: 970162245}
   tAtk: {fileID: 2129617474}
@@ -10188,10 +10193,10 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
-  m_StartCorner: 0
-  m_StartAxis: 0
-  m_CellSize: {x: 100, y: 100}
+  m_ChildAlignment: 6
+  m_StartCorner: 2
+  m_StartAxis: 1
+  m_CellSize: {x: 219.1, y: 100}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2

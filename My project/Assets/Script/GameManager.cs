@@ -7,6 +7,11 @@ public class GameManager : MonoBehaviour
 
     List<string> New = new List<string>();
     public bool isTestRoom;
+    public int buttonIndex = 0;
+    [SerializeField]
+    public GameObject useSimulatorText;
+    [SerializeField]
+    public GameManager scrollContentSimul;
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +27,5 @@ public class GameManager : MonoBehaviour
             Debug.Log(New[i]);
         }
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

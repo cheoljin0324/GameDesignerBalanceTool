@@ -52,3 +52,42 @@ MonoBehaviour:
     shiled: sda
     exp: 1
     lv: 1
+  - chName: dsda
+    hp: 123
+    atk: 123
+    def: 123
+    bdef: 123
+    atkspd: 123
+    walkspd: 123
+    atkScale: 123
+    bdrain: 123
+    weapown: dasd
+    shiled: sva
+    exp: 123
+    lv: 142311
+  - chName: dsda
+    hp: 123
+    atk: 123
+    def: 123
+    bdef: 123
+    atkspd: 123
+    walkspd: 123
+    atkScale: 123
+    bdrain: 123
+    weapown: dasd
+    shiled: sva
+    exp: 123
+    lv: 142311
+  - chName: dsda
+    hp: 123
+    atk: 123
+    def: 123
+    bdef: 123
+    atkspd: 123
+    walkspd: 123
+    atkScale: 123
+    bdrain: 123
+    weapown: dasd
+    shiled: sva
+    exp: 123
+    lv: 142311

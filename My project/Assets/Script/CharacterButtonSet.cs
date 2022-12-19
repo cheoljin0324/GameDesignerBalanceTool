@@ -53,6 +53,8 @@ public class CharacterButtonSet : MonoBehaviour
             plCon.lv = chMemory.chList[i].lv;
 
             playerButton.GetComponent<Button>().onClick.AddListener(playerButton.GetComponent<PlayerDataContainer>().DataSet);
+            playerButton.GetComponent<Button>().onClick.AddListener(()=>FindObjectOfType<TestManager>().TestAdd(FindObjectOfType<GameManager>().buttonIndex));
+            FindObjectOfType<GameManager>().buttonIndex++;
             playerButton.GetComponentInChildren<Text>().text = plCon.chName;
         }
     }
